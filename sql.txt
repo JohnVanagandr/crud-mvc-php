@@ -3,7 +3,7 @@ creamos un usuario para nuestro primer proyecto
 * creamos una base de datos para nuestro proyecto
 * CREATE DATABASE crud_mvc;
 * asignamos los privilegios a nuestro usuario
-* GRANT ALL PRIVILEGES ON aprendiz.* TO crud_mvc@localhost;
+* GRANT ALL PRIVILEGES ON crud_mvc.* TO aprendiz@localhost;
 * aseguramos que los privilegios sean tenidos en cuenta
 * FLUSH PRIVILEGES;
 * podemos validar el ingreso de nuestro usuario
