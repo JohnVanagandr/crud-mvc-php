@@ -1,0 +1,21 @@
+creamos un usuario para nuestro primer proyecto
+* CREATE USER aprendiz@localhost IDENTIFIED BY 'Aprendiz2024';
+* creamos una base de datos para nuestro proyecto
+* CREATE DATABASE crud_mvc;
+* asignamos los privilegios a nuestro usuario
+* GRANT ALL PRIVILEGES ON aprendiz.* TO crud_mvc@localhost;
+* aseguramos que los privilegios sean tenidos en cuenta
+* FLUSH PRIVILEGES;
+* podemos validar el ingreso de nuestro usuario
+* mysql -u aprendiz -p
+* ingresamos la contraseña => Aprendiz2024
+
+CREATE TABLE users
+( 
+id int(5) PRIMARY KEY auto_increment,
+first_name varchar(25) NOT NULL,
+last_name varchar(25) NOT NULL,
+email varchar(40) not null unique,
+phone varchar(12) not null,
+dni int unsigned unique not null
+  );

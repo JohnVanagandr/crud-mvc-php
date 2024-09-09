@@ -1,0 +1,15 @@
+{
+  "name": "sena/crud-mvc",
+  "authors": [
+    {
+      "name": "john becerra",
+      "email": "jfbeccera@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Sena\\": "app/"
+    }
+  },
+  "require": {}
+}
