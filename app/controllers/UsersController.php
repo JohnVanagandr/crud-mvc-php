@@ -65,22 +65,28 @@ class UsersController extends Controller
     $this->view('users/edit', $data, 'app');    
   }
 
-  public function update($id)
+  public function update()
   {
     $data = [
       'first_name' => $_REQUEST['first_name'],
       'last_name'  => $_REQUEST['last_name'],
       'email'      => $_REQUEST['email'],
-      'phone'   => $_REQUEST['phone'],
-      'dni'     => $_REQUEST['dni'],
+      'phone'      => $_REQUEST['phone'],
+      'dni'        => $_REQUEST['dni'],
     ];
+
+    $id = $_REQUEST['id'];
+
+    $this->model->updateUser($data, $id);
+
+    header("location:" . URL . "/users");
   }
 
   public function destroy()
   {
     $id = $_REQUEST['id'];
     $this->model->deleteUser($id);
-    header("location:" . URL . "/users");
+    
     header("location:" . URL . "/users");
   }
 

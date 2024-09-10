@@ -1,4 +1,83 @@
-body{
+body {
   background-color: #212121;
   color: #fff;
+}
+
+/* Layout tabla */
+
+.layout-table {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: minmax(400px, 900px);
+  grid-template-areas: 'navigation''table';
+  gap: 6px;
+  justify-content: center;
+  height: 80vh;
+}
+
+.navigation {
+  grid-area: navigation;
+  border: solid 1px #c2c2c2;
+  border-radius: 6px 6px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 10px;
+}
+
+.table {
+  grid-area: table;
+}
+
+table {
+  width: 100%;
+}
+
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #212121;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.imput-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.imput {
+  width: auto;
+  height: 36px;
+  padding: 6px;
+  outline: none;
+  border: solid 1px #c2c2c2;
+  border-radius: 6px;
+}
+
+.btn {
+  background-color: #f2f2f2;
+  border: solid 1px #f2f2f2;
+  padding: 10px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.btn--outline {
+  border: solid 1px #212121;
+}
+
+.group-btn {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }

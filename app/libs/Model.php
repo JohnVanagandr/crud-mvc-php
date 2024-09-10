@@ -2,6 +2,8 @@
 
 namespace Sena\Libs;
 
+use PDO;
+
 class Model
 {
   protected $db;
@@ -90,6 +92,46 @@ class Model
     return $stm->fetch();
   }
 
+
+  /**
+   * Método para actualizar registros en la base de datos.
+   *
+   * @param string $tabla El nombre de la tabla en la que se actualizarán los datos.
+   * @param array $columnas Un array asociativo de columnas y valores a actualizar.
+   *
+   * @return mixed Retorna el ID del registro actualizado si es exitoso, o un mensaje de error en caso contrario.
+   **/
+  public function update($tabla = "", $data = [], $id)
+  {
+    $set = "";
+
+    foreach ($data as $key => $value) {
+      $set .= $key . " = :" . $key . ",";
+    }
+    $set = substr($set, 0, -1);
+
+    // Construir la consulta SQL de actualización utilizando las cadenas formadas
+    $sql = "UPDATE $tabla SET $set WHERE id = :id";
+
+    // die($sql);
+
+    // Preparar la consulta SQL
+    $stm = $this->connection->prepare($sql);
+
+    // Asignar valores a los parámetros utilizando enlaces de parámetros
+    foreach ($data as $key => $value) {
+      $stm->bindParam(":" . $key, $data[$key], PDO::PARAM_STR);
+    }
+
+    $stm->bindParam(":id", $id, PDO::PARAM_STR);
+
+    // Ejecutar la consulta preparada
+    if (!$stm->execute()) {
+      return $this->connection->errorInfo();
+    } else {
+      return true;
+    }
+  }
 
 
   /**

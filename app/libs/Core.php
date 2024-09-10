@@ -25,6 +25,8 @@ class Core
       if (method_exists($this->controller, $url[1])) {
         $this->method = $url[1];
         unset($url[1]);
+      }else {
+        die("El método solicitado no fue programado...");
       }
     }
 

@@ -1,4 +1,1 @@
-<?php
-
-
-echo "Home Index lol";
+<a href="<?= URL ?>/users" class="btn">Modulo Usuarios</a>

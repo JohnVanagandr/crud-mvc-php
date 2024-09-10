@@ -28,6 +28,11 @@ class UserModel extends Model
     return $this->getDataById($this->table, $id);
   }
 
+  public function updateUser($data, $id)
+  {
+    return $this->update("users", $data, $id);
+  }
+
   public  function deleteUser($id)
   {
     return $this->delete($this->table, $id);
