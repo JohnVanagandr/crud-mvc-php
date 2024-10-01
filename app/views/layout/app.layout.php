@@ -11,7 +11,7 @@
 
 <body>
 
-  <?php echo $contend; ?>
+  <?= $contend ?>
 
   <script src="<?= URL ?>/assets/js/app.js" type="module"></script>
 </body>

@@ -35,6 +35,7 @@ class Controller
    */
   public function view($view = "", $data = [], $layout = "")
   {
+    // Iniciamos a almacenar los datos en el buffering para mostrarlos cuando termine de procesar todo el código
     ob_start();
     $view = $view. '.view';
     if (file_exists('../app/views/'. $view. '.php')) {
